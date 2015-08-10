@@ -1,10 +1,38 @@
 p
-	strong Title:
+	strong
+		| Title:
 	= @article.title
 
 p
-	strong Text:
+	strong
+		| Text:
 	= @article.text
+
+h2
+	| Comments
+- @article.comments.each do |comment|
+	p
+		strong
+			| Commenter:
+		= comment.commenter
+	p
+		strong
+			| Comment:
+		= comment.body
+
+h2
+	| Add a comment:
+= form_for([@article, @article.comments.build]) do |f|
+	p
+		= f.label :commenter
+		br
+		= f.text_field :commenter
+	p
+		= f.label :body
+		br
+		= f.text_area :body
+	p
+		= f.submit
 
 = link_to 'Edit', edit_article_path(@article)
 | |
