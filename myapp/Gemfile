@@ -45,5 +45,8 @@ group :development, :test do
   # Slim gems
   gem 'slim'
   gem 'slim-rails'
+
+  # Rubocop gem
+  gem 'rubocop', require: false
 end
 
