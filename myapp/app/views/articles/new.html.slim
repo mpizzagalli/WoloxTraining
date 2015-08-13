@@ -1,6 +1,7 @@
 h1
-  | New Article!
+  = t :new_article
+  | !
 
 = render 'form'
 
-= link_to 'Back', articles_path
+= link_to (t :back), articles_path

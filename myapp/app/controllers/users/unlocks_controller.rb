@@ -1,3 +1,4 @@
-class Users::UnlocksController < Devise::UnlocksController
-
+module Users
+  class UnlocksController < Devise::UnlocksController
+  end
 end
