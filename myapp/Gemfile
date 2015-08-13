@@ -51,5 +51,8 @@ group :development, :test do
 
   # Devise
   gem 'devise'
+
+  # Internationalization
+  gem 'rails-i18n', '~> 4.0.0'
 end
 

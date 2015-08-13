@@ -1,3 +1,4 @@
-class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-
+module Users
+  class OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  end
 end
