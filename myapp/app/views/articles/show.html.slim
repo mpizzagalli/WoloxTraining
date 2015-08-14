@@ -1,21 +1,21 @@
 p
 	strong
-		| Title:
+		= t :title
 	= @article.title
 
 p
 	strong
-		| Text:
+		= t :text
 	= @article.text
 
 h2
-	| Comments
+	= t :comments
 = render @article.comments
 
 h2
-	| Add a comment:
+	= t :new_comment
 = render 'comments/form'
 
-= link_to 'Edit', edit_article_path(@article)
+= link_to (t :edit), edit_article_path(@article)
 | |
-= link_to 'Back', articles_path
+= link_to (t :back), articles_path
