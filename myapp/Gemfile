@@ -48,5 +48,8 @@ group :development, :test do
 
   # Rubocop gem
   gem 'rubocop', require: false
+
+  # Devise
+  gem 'devise'
 end
 
