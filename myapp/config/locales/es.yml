@@ -29,6 +29,7 @@ es:
   forgot_password: "Olvidaste tu contraseña?"
   send_reset_pass_instructions: "Enviarme instrucciones para recuperar contraseña"
   errors_prohibited: " no deja que este articulo pueda ser guardado:"
+  change_language: "Cambiar idioma:"
   helpers:
     submit:
       create: "Crear %{model}"
