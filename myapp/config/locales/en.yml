@@ -48,6 +48,7 @@ en:
   forgot_password: "Forgot your password?"
   send_reset_pass_instructions: "Send me reset password instructions"
   errors_prohibited: " prohibited this article from being saved:"
+  change_language: "Change language:"
   helpers:
     submit:
       create: "Create %{model}"
