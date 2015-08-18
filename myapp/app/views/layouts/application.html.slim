@@ -11,9 +11,21 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
+    = nav_bar fixed: :top do
+      = menu_group pull: :left do
+        = menu_item "Home", root_path, pull: :left
+      = menu_group pull: :right do
+        - if user_signed_in?
+          = link_to (t :log_out), destroy_user_session_path, :method => :delete
+        - else
+          = link_to (t :log_in), new_user_session_path
     = yield
-    p
-      - if user_signed_in?
-        = link_to 'Log out', destroy_user_session_path, :method => :delete
-      - else
-        = link_to 'Log in', new_user_session_path
+    p.notice
+      = notice
+    p.alert
+      = alert
+    = nav_bar fixex: :bottom
+      =menu_text (t :change_language)
+      = form_tag({}, {method: :get}) do
+        = select_tag :locale, options_for_select(I18n.available_locales, I18n.locale)
+        = submit_tag("Ok")
