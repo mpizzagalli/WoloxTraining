@@ -1,0 +1,19 @@
+h1
+  ' Hello
+  = @user.email
+h2
+  | Last 10 articles:
+
+table
+  tr
+    th
+      = t :title
+    th
+      = t :text
+    th colspan="3"
+  - @articles.each do |article|
+    tr
+      td
+        = article.title
+      td
+        = article.text

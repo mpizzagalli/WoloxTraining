@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root 'welcome#index'
 
+  get :send_articles_email, to: 'articles#send_articles_email', as: :send_articles_email
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
