@@ -49,6 +49,12 @@ class ArticlesController < ApplicationController
     redirect_to root_path
   end
 
+  def send_articles_email_worker
+    MailerWorker.perform_async(current_user.id)
+
+    redirect_to root_path
+  end
+
   private
 
   def article_params

@@ -3,4 +3,6 @@ h1
 = link_to (t :blog), controller: 'articles'
 br
 - if user_signed_in?
-  = button_to 'Send Email with articles', send_articles_email_path, method: :get
+  = button_to 'Send me the newest 10 articles', send_articles_email_path, method: :get
+  br
+  = button_to 'Send me te newest 10 articles asynchronously', send_articles_email_worker_path, method: :get
