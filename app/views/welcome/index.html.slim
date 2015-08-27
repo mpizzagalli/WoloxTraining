@@ -1,0 +1,6 @@
+h1
+  = t :hello
+= link_to (t :blog), controller: 'articles'
+br
+- if user_signed_in?
+  = button_to 'Send Email with articles', send_articles_email_path, method: :get

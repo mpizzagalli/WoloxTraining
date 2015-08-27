@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+
   def index
     @articles = Article.all
   end
@@ -17,7 +19,6 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-
     if @article.save
       redirect_to @article
     else
@@ -40,6 +41,12 @@ class ArticlesController < ApplicationController
     @article.destroy
 
     redirect_to articles_path
+  end
+
+  def send_articles_email
+    AdminMailer.last_articles(current_user).deliver
+
+    redirect_to root_path
   end
 
   private
