@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   get :send_articles_email, to: 'articles#send_articles_email', as: :send_articles_email
+  get :send_articles_email_worker, to: 'articles#send_articles_email_worker', as: :send_articles_email_worker
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
